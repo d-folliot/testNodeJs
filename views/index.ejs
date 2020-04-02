@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Todolist</title> 
+        <style>
+            li input {
+                background-color:"#FFF";
+                border:none;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Ma todolist</h1>
+        <form action="/remove" method="POST">
+            <ul>
+
+            <% for (let i=0; i<dolist.length; i++){
+                %><li><input type="submit" value="✘" name='<%= i %>' /><%= dolist[i] %> </li><%
+            }
+            %>
+            </ul>
+        </form>
+        <form action="/add" method="POST">
+            <label for="inputtxt">Que dois-je faire? </label>
+            <input type="text" name="textinput" id="inputtxt"></input>
+            <input type="submit" value="Valider"/>
+        </form>
+    </body>
+</html>
